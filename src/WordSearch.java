@@ -72,8 +72,8 @@ public class WordSearch {
 
         //Creates instance of a new dictionary and calls routine to build trie.
         WordDictionary newDict = new WordDictionary();
-        for (int i = 0; i < dictionary.size(); i++) {
-            String word = dictionary.get(i);
+        for (String word :
+                dictionary) {
             newDict.addWord(word);
         }
 

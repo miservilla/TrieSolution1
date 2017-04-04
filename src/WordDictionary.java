@@ -2,22 +2,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * http://www.programcreek.com/2014/05/leetcode-add-and-search-word-data-structure-design-java/
  * @author Michael Servilla
  * @version date 2017-04-04
  */
-public class WordDictionary {
+class WordDictionary {
     private TrieNode root;
 
-    public WordDictionary() {
+    WordDictionary() {
         root = new TrieNode();
     }
-    public void addWord(String word) {
+    void addWord(String word) {
         HashMap<Character, TrieNode> children = root.children;
 
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
 
-            TrieNode t = null;
+            TrieNode t;
             if (children.containsKey(c)) {
                 t = children.get(c);
             } else {
@@ -37,26 +38,22 @@ public class WordDictionary {
         HashMap<Character, TrieNode> children = new HashMap<>();
         boolean isLeaf;
 
-        public TrieNode() {
+        TrieNode() {
 
         }
-        public TrieNode(char c) {
+        TrieNode(char c) {
             this.c = c;
         }
     }
 
-    public boolean search(String word) {
+    boolean search(String word) {
         return dfsSearch(root.children, word, 0);
     }
 
-    public boolean dfsSearch(HashMap<Character, TrieNode> children, String word,
-                             int start) {
+    private boolean dfsSearch(HashMap<Character, TrieNode> children, String word,
+                              int start) {
         if (start == word.length()) {
-            if (children.size() == 0) {
-                return true;
-            } else {
-                return false;
-            }
+            return children.size() == 0;
         }
         char c = word.charAt(start);
 
