@@ -62,18 +62,6 @@ class WordDictionary {
                 return true;
             }
             return dfsSearch(children.get(c).children, word, start + 1);
-        } else if (c== '.') {
-            boolean result = false;
-            for (Map.Entry<Character, TrieNode> child :
-                    children.entrySet()) {
-                if (start == word.length() - 1 && child.getValue().isLeaf) {
-                    return true;
-                }
-                if(dfsSearch(child.getValue().children, word, start + 1)){
-                    result = true;
-                }
-            }
-            return result;
         } else {
             return false;
         }
