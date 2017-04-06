@@ -43,9 +43,9 @@ public class WordSearch {
 
         //Routine to call methods to scan in text files and call methods to
         // build ArrayLists of the text files.
-        Path dictionarySource = Paths.get("dictionary.txt"); //source for
+        Path dictionarySource = Paths.get("dictionary2.txt"); //source for
         // dictionary, need to change to CLI args[0]
-        Path puzzleSource = Paths.get("puzzle.txt"); //source for puzzle,
+        Path puzzleSource = Paths.get("puzzle2.txt"); //source for puzzle,
         // need to change to CLI args[1]
         ArrayList<String> puzzle = new ArrayList<>();
         ArrayList<String> dictionary = new ArrayList<>();
